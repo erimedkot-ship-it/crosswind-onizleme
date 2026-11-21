@@ -30,7 +30,8 @@
       gittiYakit: 'Thank you. Your request has been sent to our fuel team. We will get back to you using the contact details you gave.',
       gittiCharter: 'Thank you. Your request has been sent to our charter team. We will get back to you using the contact details you gave.',
       gitmedi: 'Your request could not be sent. You can send it by email or WhatsApp instead:', toastGitmedi: 'Could not send. Please use email or WhatsApp.',
-      dur: 'Pause', devam: 'Play', yasalGuncel: 'Last updated', tarihSec: 'Select a date',
+      yzBeyan: 'Images on this website were created with artificial intelligence and are illustrative.',
+      yasalGuncel: 'Last updated', tarihSec: 'Select a date',
       ucusTuru: 'Flight type', tipPrivate: 'Private', tipGroup: 'Group', tipCargo: 'Cargo', kargoOrnek: 'e.g. 2 tonnes, 3 pallets',
       sinif: 'Aircraft category', sinifKaldir: 'Remove aircraft category', sablonKopyalandi: 'Request template copied.',
       meydanEklendi: 'Airport added to your fuel request: '
@@ -57,7 +58,8 @@
       gittiYakit: 'Teşekkürler. Talebiniz yakıt ekibimize iletildi. Verdiğiniz iletişim bilgisi üzerinden size dönüş yapacağız.',
       gittiCharter: 'Teşekkürler. Talebiniz charter ekibimize iletildi. Verdiğiniz iletişim bilgisi üzerinden size dönüş yapacağız.',
       gitmedi: 'Talebiniz gönderilemedi. E-posta ya da WhatsApp ile iletebilirsiniz:', toastGitmedi: 'Gönderilemedi. Lütfen e-posta ya da WhatsApp kullanın.',
-      dur: 'Durdur', devam: 'Oynat', yasalGuncel: 'Son güncelleme', tarihSec: 'Tarih seçin',
+      yzBeyan: 'Bu sitedeki görseller yapay zekâ ile üretilmiştir ve temsilîdir.',
+      yasalGuncel: 'Son güncelleme', tarihSec: 'Tarih seçin',
       ucusTuru: 'Uçuş türü', tipPrivate: 'Özel', tipGroup: 'Grup', tipCargo: 'Kargo', kargoOrnek: 'ör. 2 ton, 3 palet',
       sinif: 'Uçak sınıfı', sinifKaldir: 'Uçak sınıfını kaldır', sablonKopyalandi: 'Talep şablonu kopyalandı.',
       meydanEklendi: 'Meydan yakıt talebinize eklendi: '
@@ -71,7 +73,9 @@
   //        Doluysa bile yalnızca ziyaretçi çerez bandında "Kabul Et" dediğinde yüklenir.
   //   formAdresi: talepleri e-postaya ileten sunucu adresi (cwavia.com IIS: '/api/talep.ashx').
   //        Boşsa ya da sunucu yanıt vermezse form, talebi e-posta / WhatsApp mesajı olarak hazırlar.
-  var AYAR = { ga4: '', formAdresi: '' };
+  //   yzBeyan: true olursa her sayfanın alt bilgisine yapay zekâ görsel beyanı eklenir (metin: M.yzBeyan).
+  //        K22 gereği kapalı; avukat Reklam Yönetmeliği m.18/8 için beyan gerekli derse true yapılır.
+  var AYAR = { ga4: '', formAdresi: '', yzBeyan: false };
 
   // Sayfa geçişi: yeni açılan sayfa en üstten başlar (çapa ya da geri/ileri yoksa).
   // Bazı ortamlar (ör. önizleme çerçeveleri) önceki kaydırmayı geri yükleyebildiği için kısa süre korunur.
@@ -688,31 +692,14 @@
   else if (!cerezOku()) setTimeout(cerezGoster, 900);
   else analizYukle();
 
-  // Business Partners: liste bir kez kopyalanır (dikişsiz döngü); Pause düğmesi, ekran dışında durma
-  var partnerSerit = document.getElementById('partner-serit');
-  if (partnerSerit) {
-    var partnerListe = partnerSerit.querySelector('.partner-akis');
-    var partnerKopya = partnerListe.cloneNode(true);
-    partnerKopya.setAttribute('aria-hidden', 'true');
-    partnerKopya.removeAttribute('role');
-    partnerKopya.removeAttribute('aria-labelledby');
-    partnerKopya.querySelectorAll('img').forEach(function (i) { i.alt = ''; });
-    partnerSerit.appendChild(partnerKopya);
-    var partnerDur = document.querySelector('.partner-dur');
-    if (partnerDur) {
-      var durEtiketi = function () {
-        var durdu = partnerSerit.classList.contains('durdu');
-        partnerDur.setAttribute('aria-pressed', durdu);
-        partnerDur.querySelector('span').textContent = durdu ? M.devam : M.dur;
-      };
-      durEtiketi();
-      partnerDur.addEventListener('click', function () { partnerSerit.classList.toggle('durdu'); durEtiketi(); });
-    }
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (g) {
-        partnerSerit.classList.toggle('gizli', !g[0].isIntersecting);
-        if (g[0].isIntersecting) partnerSerit.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = 'eager'; });
-      }, { rootMargin: '200px 0px' }).observe(partnerSerit);
+  // Yapay zekâ görsel beyanı (AYAR.yzBeyan; varsayılan kapalı)
+  if (AYAR.yzBeyan) {
+    var altBilgi = document.querySelector('footer .alt');
+    if (altBilgi) {
+      var yz = document.createElement('span');
+      yz.className = 'yz-beyan';
+      yz.textContent = M.yzBeyan;
+      altBilgi.insertBefore(yz, altBilgi.querySelector('nav.yasal'));
     }
   }
 

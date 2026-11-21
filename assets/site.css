@@ -717,7 +717,7 @@
     .js-yok .teklif--ozet .kart__sag { display: flex; }
     .js-yok .teklif--ozet .kart__secim { display: none; }
     .js-yok .mobil-bar { transform: none; }
-    [id] { scroll-margin-top: 72px; }
+    [id] { scroll-margin-top: 64px; }
     html:not(.js-yok) .mobil-panel { display: none; }
 
     /* Üst bar ve logo: okunur boyut, kesik filigran yok */
@@ -970,42 +970,6 @@
   }
   .kanal-not { margin-top: 10px; font-size: 14px; color: var(--on-dark-2); }
   .kanal-not a { color: #fff; font-weight: 600; }
-  /* ---------- Business Partners ---------- */
-  /* Hizmet bölümlerinden hafif bir bant: daha az boşluk, daha küçük başlık */
-  .partnerler.bolum { padding: clamp(64px, 7vw, 112px) 0; }
-  .partnerler h2 { font-size: clamp(30px, 2.6vw, 40px); }
-  .partnerler .bas { margin-bottom: clamp(32px, 3.5vw, 52px); }
-  /* Yatay akan şerit: liste JS ile bir kez kopyalanır, iki kopya yan yana -100% kayar (dikişsiz döngü).
-     Fareyle üzerine gelince ya da Pause ile durur; ekran dışında ve "hareketi azalt" açıkken akmaz. */
-  .partner-serit { --hucre: 228px; --sure: 46s; display: flex; overflow: hidden; border-top: 1px solid rgba(40, 74, 121, .14); border-bottom: 1px solid rgba(40, 74, 121, .14); -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
-  .partner-akis { list-style: none; display: flex; flex: none; animation: partner-kay var(--sure) linear infinite; }
-  .partner-akis li { flex: none; width: var(--hucre); height: 120px; display: flex; align-items: center; justify-content: center; padding: 18px 30px; border-right: 1px solid rgba(40, 74, 121, .14); }
-  @keyframes partner-kay { to { transform: translateX(-100%); } }
-  .partner-serit:hover .partner-akis, .partner-serit.durdu .partner-akis, .partner-serit.gizli .partner-akis { animation-play-state: paused; }
-  .partner-dur { display: flex; align-items: center; gap: 8px; margin: 18px 0 0 auto; padding: 6px 2px; border: 0; background: none; font-size: 13px; font-weight: 500; color: var(--ink-2); cursor: pointer; }
-  .partner-dur::before { content: ""; width: 8px; height: 10px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
-  .partner-dur[aria-pressed="true"]::before { width: 0; height: 0; border: 0; border-left: 9px solid currentColor; border-top: 5.5px solid transparent; border-bottom: 5.5px solid transparent; }
-  .partner-dur:hover { color: var(--navy); }
-  @media (hover: hover) and (pointer: fine) { .partner-akis li:hover .partner-logo { opacity: 1; } }
-  @media (prefers-reduced-motion: reduce) {
-    .partner-serit { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-    .partner-akis { animation: none; }
-    .partner-akis[aria-hidden="true"], .partner-dur { display: none; }
-  }
-  /* --h: alan esaslı optik boy; --ton: gri tonları eşitler; --y: optik merkez; koyu = beyaz ya da tek renkli logo, düz siluet */
-  .partner-logo { display: block; height: var(--h, 52px); width: auto; max-width: 100%; object-fit: contain; transform: translateY(var(--y, 0)); filter: grayscale(1) brightness(var(--ton, 1)); opacity: .7; transition: opacity .4s var(--ease); }
-  .partner-logo.koyu { filter: brightness(0) invert(.2); }
-  /* Mobil: daha küçük hücreler, aynı hız hissi */
-  @media (max-width: 760px) {
-    .partnerler.bolum { padding: 48px 0; }
-    .partnerler h2 { font-size: 28px; }
-    .partnerler .bas { margin-bottom: 24px; }
-    .partner-serit { --hucre: 150px; --sure: 34s; margin: 0 calc(var(--gutter) * -1); }
-    .partner-akis li { height: 84px; padding: 10px 18px; }
-    .partner-logo { height: calc(var(--h, 52px) * .66); opacity: .8; }
-    .partner-logo.kompakt { height: calc(var(--h, 52px) * .75); }
-    .partner-dur { margin-top: 12px; }
-  }
 
   /* ---------- Yayın cilası: seçim rengi, kaydırma çubuğu ---------- */
   ::selection { background: var(--logo); color: #fff; }
