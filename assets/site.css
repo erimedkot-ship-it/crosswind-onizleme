@@ -104,7 +104,7 @@
 
   /* ---------- Hero ---------- */
   .hero { position: relative; height: 100svh; min-height: 680px; max-height: 1120px; color: #fff; overflow: hidden; background: var(--deep); }
-  .hero__media { position: absolute; inset: 0; background: url(hero.jpg) center / cover no-repeat; }
+  .hero__media { position: absolute; inset: 0; background: url(hero.jpg) center / cover no-repeat; background-image: image-set(url(hero.webp) type('image/webp'), url(hero.jpg) type('image/jpeg')); }
   .hero__media { will-change: transform; }
   .hero__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .8s var(--ease); }
   .hero__scrim {
@@ -342,7 +342,7 @@
 
   /* ---------- İletişim (tek bölüm: WhatsApp, e-posta, teklif) ---------- */
   .iletisim-bolum { position: relative; color: #fff; overflow: hidden; background: var(--deep); }
-  .iletisim-bolum__bg { position: absolute; inset: -10% 0; background: url(operasyon.jpg) center / cover no-repeat; will-change: transform; }
+  .iletisim-bolum__bg { position: absolute; inset: -10% 0; background: url(operasyon.jpg) center / cover no-repeat; background-image: image-set(url(operasyon.webp) type('image/webp'), url(operasyon.jpg) type('image/jpeg')); will-change: transform; }
   .iletisim-bolum__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,28,49,.95) 0%, rgba(14,28,49,.82) 50%, rgba(14,28,49,.45) 100%); }
   .iletisim-bolum .wrap { position: relative; padding-top: clamp(96px, 11vw, 160px); padding-bottom: clamp(96px, 11vw, 160px); }
   .iletisim-bolum h2 { max-width: 14ch; }
@@ -750,7 +750,7 @@
 
     /* Ana sayfa hero */
     .hero { height: 100svh; min-height: 760px; max-height: none; }
-    .hero__media { background-image: url(hero-mobil.jpg); background-position: center bottom; }
+    .hero__media { background-image: url(hero-mobil.jpg); background-image: image-set(url(hero-mobil.webp) type('image/webp'), url(hero-mobil.jpg) type('image/jpeg')); background-position: center bottom; }
     .hero__media video { object-position: center bottom; filter: brightness(.92) contrast(1.08); }
     .hero__scrim { background: linear-gradient(180deg, rgba(14,28,49,.8) 0%, rgba(14,28,49,.45) 42%, rgba(14,28,49,0) 62%), linear-gradient(0deg, rgba(14,28,49,.55) 0%, rgba(14,28,49,0) 22%); }
     .hero__icerik { justify-content: flex-start; padding-top: 104px; padding-bottom: 0; }
@@ -946,10 +946,10 @@
     footer .slogan { margin-top: 0; }
     footer .ust > div:nth-child(2), footer .ust > div:nth-child(3) { display: none; }
     /* Hafif görseller */
-    .sayfa-hero__bg[style*="kabin.jpg"] { background-image: url(kabin-sm.jpg) !important; }
-    .sayfa-hero__bg[style*="ucus.jpg"] { background-image: url(ucus-sm.jpg) !important; }
-    .foto-bant__bg[style*="pist.jpg"] { background-image: url(pist-sm.jpg) !important; }
-    .iletisim-bolum__bg { background-image: url(operasyon-sm.jpg); }
+    .sayfa-hero__bg[style*="kabin.jpg"] { background-image: url(kabin-sm.jpg) !important; background-image: image-set(url(kabin-sm.webp) type('image/webp'), url(kabin-sm.jpg) type('image/jpeg')) !important; }
+    .sayfa-hero__bg[style*="ucus.jpg"] { background-image: url(ucus-sm.jpg) !important; background-image: image-set(url(ucus-sm.webp) type('image/webp'), url(ucus-sm.jpg) type('image/jpeg')) !important; }
+    .foto-bant__bg[style*="pist.jpg"] { background-image: url(pist-sm.jpg) !important; background-image: image-set(url(pist-sm.webp) type('image/webp'), url(pist-sm.jpg) type('image/jpeg')) !important; }
+    .iletisim-bolum__bg { background-image: url(operasyon-sm.jpg); background-image: image-set(url(operasyon-sm.webp) type('image/webp'), url(operasyon-sm.jpg) type('image/jpeg')); }
   }
   /* Bölge metinleri: giriş cümlesi + "Plan ahead for" (31 Ekim) */
   .bolge-panel { min-height: 214px; }
