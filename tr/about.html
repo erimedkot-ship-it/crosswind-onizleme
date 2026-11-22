@@ -32,7 +32,7 @@
 <link rel="preload" href="../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/hanken-grotesk-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
-<link rel="preload" as="image" href="../assets/ucus.jpg">
+<link rel="preload" as="image" href="../assets/ucus.webp" type="image/webp">
 <script type="application/ld+json" data-uretim>{"@context":"https://schema.org","@type":"Organization","name":"Crosswind Aviation","legalName":"Crosswind Aviation LTD","url":"https://cwavia.com/","logo":"https://cwavia.com/assets/apple-touch-icon.png","address":{"@type":"PostalAddress","streetAddress":"Gazimagusa Freezone Area","postOfficeBoxNumber":"PO Box 909","addressCountry":"Cyprus"},"contactPoint":[{"@type":"ContactPoint","contactType":"Aviation fuel","telephone":"+905537311434","email":"sales@cwavia.com","availableLanguage":["en","tr"]},{"@type":"ContactPoint","contactType":"Charter","telephone":"+905302360904","email":"charter@cwavia.com","availableLanguage":["en","tr"]}]}</script>
 </head>
 <body>
@@ -64,7 +64,7 @@
 
 <main id="icerik" tabindex="-1">
   <section class="sayfa-hero" aria-labelledby="baslik">
-    <div class="sayfa-hero__bg" data-paralaks="0.08" style="background-image:url(../assets/ucus.jpg)" role="img" aria-label="Sabahın erken ışığında bulutların üzerinde uçan bir iş jeti"></div>
+    <div class="sayfa-hero__bg" data-paralaks="0.08" style="background-image:url(../assets/ucus.jpg);background-image:image-set(url(../assets/ucus.webp) type('image/webp'), url(../assets/ucus.jpg) type('image/jpeg'))" role="img" aria-label="Sabahın erken ışığında bulutların üzerinde uçan bir iş jeti"></div>
     <div class="sayfa-hero__scrim"></div>
     <div class="wrap">
       <div class="giris-anim">
@@ -97,7 +97,7 @@
       </div>
       <div class="paneller">
         <a class="panel" href="fuel.html">
-          <img decoding="async" src="../assets/yakit-ikmal-panel.jpg" srcset="../assets/yakit-ikmal-panel-sm.jpg 709w, ../assets/yakit-ikmal-panel.jpg 1229w" sizes="(max-width: 760px) 86vw, 50vw" alt="Gece ıslak apronda yakıt hortumu bağlı bir iş jeti" loading="lazy">
+          <picture><source type="image/webp" srcset="../assets/yakit-ikmal-panel-sm.webp 709w, ../assets/yakit-ikmal-panel.webp 1229w" sizes="(max-width: 760px) 86vw, 50vw"><img decoding="async" src="../assets/yakit-ikmal-panel.jpg" srcset="../assets/yakit-ikmal-panel-sm.jpg 709w, ../assets/yakit-ikmal-panel.jpg 1229w" sizes="(max-width: 760px) 86vw, 50vw" alt="Gece ıslak apronda yakıt hortumu bağlı bir iş jeti" loading="lazy"></picture>
           <div class="panel__ic">
             <h3>Uçak Yakıtı</h3>
             <p>İşletmeciler, uçuş planlayıcılar ve kurumsal uçuş departmanları için Jet A-1 tedariği: Türkiye’den dış hat çıkışlarında ve Avrupa, Orta Doğu, Orta Asya, Afrika ve ötesindeki uçuşlarda.</p>
@@ -105,7 +105,7 @@
           </div>
         </a>
         <a class="panel" href="charter.html">
-          <img decoding="async" src="../assets/charter.jpg" srcset="../assets/charter-sm.jpg 821w, ../assets/charter.jpg 1200w" sizes="(max-width: 760px) 86vw, 50vw" alt="Şafakta bir iş jetinin açık kapısı ve merdiveni" loading="lazy">
+          <picture><source type="image/webp" srcset="../assets/charter-sm.webp 821w, ../assets/charter.webp 1200w" sizes="(max-width: 760px) 86vw, 50vw"><img decoding="async" src="../assets/charter.jpg" srcset="../assets/charter-sm.jpg 821w, ../assets/charter.jpg 1200w" sizes="(max-width: 760px) 86vw, 50vw" alt="Şafakta bir iş jetinin açık kapısı ve merdiveni" loading="lazy"></picture>
           <div class="panel__ic">
             <h3>Charter</h3>
             <p>Broker olarak organize edilen özel, grup ve kargo uçuşları. Rotanız için ticari işletmecilerden seçenekleri bulur, ayrıntıları sizinle planlarız.</p>
@@ -146,7 +146,7 @@
           <button type="button" data-bolge="af" aria-pressed="false">Afrika</button>
         </div>
         <div class="bolge-panel yukari" id="bolge-panel" aria-live="polite">
-          <div data-icerik="hepsi"><h3>Ana Bölgelerimiz ve Ötesi</h3><p>Kısa bir planlama notu için bir bölge seçin. Bu bölgelerin dışında, Amerika kıtası ve Asya-Pasifik dahil, yakıt da ayarlayabiliyoruz. Uygunluk meydana ve tarihe göre değişir; her talep için kontrol ederiz.</p></div>
+          <div data-icerik="hepsi"><h3>Ana Bölgelerimiz ve Ötesi</h3><p>Kısa bir planlama notu için bir bölge seçin. Uygunluk meydana ve tarihe göre değişir; her talep için kontrol ederiz.</p></div>
           <div data-icerik="tr" hidden><h3>Türkiye</h3><p>Avrupa, Körfez ve Orta Asya koridorlarının kesişim noktasındaki ana merkezimiz. Dış hat çıkışlı uçuşlarda Türkiye’nin ana hub ve kıyı meydanlarında yerel tedarikçilerle doğrudan saha koordinasyonu.</p><small><b>Operasyonel odak:</b> İstanbul ve Ankara, Karadeniz kıyısı ve yazın Antalya, Bodrum ve Dalaman kıyı meydanları.</small><div class="icao-cipler" role="group" aria-label="Meydanlar"><button type="button" data-icao="LTBA">LTBA</button><button type="button" data-icao="LTFM">LTFM</button><button type="button" data-icao="LTAI">LTAI</button><button type="button" data-icao="LTCG">LTCG</button><button type="button" data-icao="LTFE">LTFE</button><button type="button" data-icao="LTAC">LTAC</button><button type="button" data-icao="LTBS">LTBS</button><button type="button" data-icao="LTBU">LTBU</button><button type="button" data-icao="LTFJ">LTFJ</button></div></div>
           <div data-icerik="eu" hidden><h3>Avrupa</h3><p>Birleşik Krallık, Batı Avrupa ve Akdeniz’deki iş havacılığı ve ticari merkezlerde yıl boyu ikmal; yoğun sezonda birçok meydanda birden fazla tedarikçi.</p><small><b>Operasyonel odak:</b> slot kontrollü meydanlar, yazın Akdeniz ve ada trafiği, kışın Alp rotaları.</small><div class="icao-cipler" role="group" aria-label="Meydanlar"><button type="button" data-icao="EGLF">EGLF</button><button type="button" data-icao="EGGW">EGGW</button><button type="button" data-icao="LFPB">LFPB</button><button type="button" data-icao="LSGG">LSGG</button><button type="button" data-icao="LFMN">LFMN</button><button type="button" data-icao="LEMD">LEMD</button><button type="button" data-icao="LIRA">LIRA</button><button type="button" data-icao="LIPZ">LIPZ</button><button type="button" data-icao="LMML">LMML</button></div></div>
           <div data-icerik="me" hidden><h3>Orta Doğu</h3><p>Avrupa, Asya ve Afrika’yı bağlayan Körfez ve Kızıldeniz merkezlerinde hem iş jetleri hem de geniş gövde ve kargo operasyonları için Jet A-1 tedariği.</p><small><b>Operasyonel odak:</b> 7/24 turnaround desteği, teknik duruş (tech-stop) ikmalleri ve yoğun kış sezonu.</small><div class="icao-cipler" role="group" aria-label="Meydanlar"><button type="button" data-icao="OMDW">OMDW</button><button type="button" data-icao="OOMS">OOMS</button><button type="button" data-icao="OERK">OERK</button><button type="button" data-icao="OEJN">OEJN</button><button type="button" data-icao="OMAD">OMAD</button><button type="button" data-icao="OKKK">OKKK</button></div></div>
