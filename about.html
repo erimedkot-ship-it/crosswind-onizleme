@@ -31,7 +31,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<link rel="preload" as="image" href="assets/ucus.jpg">
+<link rel="preload" as="image" href="assets/ucus.webp" type="image/webp">
 <script type="application/ld+json" data-uretim>{"@context":"https://schema.org","@type":"Organization","name":"Crosswind Aviation","legalName":"Crosswind Aviation LTD","url":"https://cwavia.com/","logo":"https://cwavia.com/assets/apple-touch-icon.png","address":{"@type":"PostalAddress","streetAddress":"Gazimagusa Freezone Area","postOfficeBoxNumber":"PO Box 909","addressCountry":"Cyprus"},"contactPoint":[{"@type":"ContactPoint","contactType":"Aviation fuel","telephone":"+905537311434","email":"sales@cwavia.com","availableLanguage":["en","tr"]},{"@type":"ContactPoint","contactType":"Charter","telephone":"+905302360904","email":"charter@cwavia.com","availableLanguage":["en","tr"]}]}</script>
 </head>
 <body>
@@ -63,7 +63,7 @@
 
 <main id="icerik" tabindex="-1">
   <section class="sayfa-hero" aria-labelledby="baslik">
-    <div class="sayfa-hero__bg" data-paralaks="0.08" style="background-image:url(assets/ucus.jpg)" role="img" aria-label="Business jet in flight above the clouds in early morning light"></div>
+    <div class="sayfa-hero__bg" data-paralaks="0.08" style="background-image:url(assets/ucus.jpg);background-image:image-set(url(assets/ucus.webp) type('image/webp'), url(assets/ucus.jpg) type('image/jpeg'))" role="img" aria-label="Business jet in flight above the clouds in early morning light"></div>
     <div class="sayfa-hero__scrim"></div>
     <div class="wrap">
       <div class="giris-anim">
@@ -96,7 +96,7 @@
       </div>
       <div class="paneller">
         <a class="panel" href="fuel.html">
-          <img decoding="async" src="assets/yakit-ikmal-panel.jpg" srcset="assets/yakit-ikmal-panel-sm.jpg 709w, assets/yakit-ikmal-panel.jpg 1229w" sizes="(max-width: 760px) 86vw, 50vw" alt="Business jet on a wet apron at night with a refuelling hose connected" loading="lazy">
+          <picture><source type="image/webp" srcset="assets/yakit-ikmal-panel-sm.webp 709w, assets/yakit-ikmal-panel.webp 1229w" sizes="(max-width: 760px) 86vw, 50vw"><img decoding="async" src="assets/yakit-ikmal-panel.jpg" srcset="assets/yakit-ikmal-panel-sm.jpg 709w, assets/yakit-ikmal-panel.jpg 1229w" sizes="(max-width: 760px) 86vw, 50vw" alt="Business jet on a wet apron at night with a refuelling hose connected" loading="lazy"></picture>
           <div class="panel__ic">
             <h3>Aviation Fuel</h3>
             <p>Jet A-1 supply for operators, flight planners and corporate flight departments: for international departures from Türkiye, and for flights across Europe, the Middle East, Central Asia, Africa and beyond.</p>
@@ -104,7 +104,7 @@
           </div>
         </a>
         <a class="panel" href="charter.html">
-          <img decoding="async" src="assets/charter.jpg" srcset="assets/charter-sm.jpg 821w, assets/charter.jpg 1200w" sizes="(max-width: 760px) 86vw, 50vw" alt="Open door and airstair of a business jet at dawn" loading="lazy">
+          <picture><source type="image/webp" srcset="assets/charter-sm.webp 821w, assets/charter.webp 1200w" sizes="(max-width: 760px) 86vw, 50vw"><img decoding="async" src="assets/charter.jpg" srcset="assets/charter-sm.jpg 821w, assets/charter.jpg 1200w" sizes="(max-width: 760px) 86vw, 50vw" alt="Open door and airstair of a business jet at dawn" loading="lazy"></picture>
           <div class="panel__ic">
             <h3>Charter</h3>
             <p>Private, group and cargo flights arranged as a broker. We find options from commercial operators for your route and plan the details with you.</p>
@@ -145,12 +145,12 @@
           <button type="button" data-bolge="af" aria-pressed="false">Africa</button>
         </div>
         <div class="bolge-panel yukari" id="bolge-panel" aria-live="polite">
-          <div data-icerik="hepsi"><h3>Our Core Regions, and Beyond</h3><p>Select a region for a short planning note. We also arrange fuel beyond these regions, including the Americas and Asia-Pacific. Availability varies by airport and date, and we check it for each request.</p></div>
+          <div data-icerik="hepsi"><h3>Our Core Regions, and Beyond</h3><p>Select a region for a short planning note. Availability varies by airport and date, and we check it for each request.</p></div>
           <div data-icerik="tr" hidden><h3>Türkiye</h3><p>Our home base at the crossroads of Europe, the Gulf and Central Asia. Direct coordination with local physical suppliers across major hubs and coastal airports for international departures.</p><small><b>Operational focus:</b> Istanbul and Ankara, the Black Sea coast and the summer coastal airports of Antalya, Bodrum and Dalaman.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="LTBA">LTBA</button><button type="button" data-icao="LTFM">LTFM</button><button type="button" data-icao="LTAI">LTAI</button><button type="button" data-icao="LTCG">LTCG</button><button type="button" data-icao="LTFE">LTFE</button><button type="button" data-icao="LTAC">LTAC</button><button type="button" data-icao="LTBS">LTBS</button><button type="button" data-icao="LTBU">LTBU</button><button type="button" data-icao="LTFJ">LTFJ</button></div></div>
           <div data-icerik="eu" hidden><h3>Europe</h3><p>Year-round supply across financial capitals and executive hubs in the UK, Western Europe and the Mediterranean, with more than one supplier at many airports in peak season.</p><small><b>Operational focus:</b> slot-coordinated airports, Mediterranean summer traffic and winter alpine routes.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="EGLF">EGLF</button><button type="button" data-icao="EGGW">EGGW</button><button type="button" data-icao="LFPB">LFPB</button><button type="button" data-icao="LSGG">LSGG</button><button type="button" data-icao="LFMN">LFMN</button><button type="button" data-icao="LEMD">LEMD</button><button type="button" data-icao="LIRA">LIRA</button><button type="button" data-icao="LIPZ">LIPZ</button><button type="button" data-icao="LMML">LMML</button></div></div>
           <div data-icerik="me" hidden><h3>Middle East</h3><p>Jet A-1 supply across key Gulf and Red Sea hubs connecting Europe, Asia and Africa, for both executive flights and wide-body cargo operations.</p><small><b>Operational focus:</b> 24/7 turnaround support, tech-stop uplifts and high-demand winter schedules.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="OMDW">OMDW</button><button type="button" data-icao="OOMS">OOMS</button><button type="button" data-icao="OERK">OERK</button><button type="button" data-icao="OEJN">OEJN</button><button type="button" data-icao="OMAD">OMAD</button><button type="button" data-icao="OKKK">OKKK</button></div></div>
           <div data-icerik="ca" hidden><h3>Central Asia</h3><p>Strategic tech-stop and destination airports across Kazakhstan, Uzbekistan, Azerbaijan and the wider Caspian–Central Asian corridor linking Europe and East Asia.</p><small><b>Operational focus:</b> long-sector fuel planning, cargo freighter uplifts and local handling coordination.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="UAAA">UAAA</button><button type="button" data-icao="UACC">UACC</button><button type="button" data-icao="UTTT">UTTT</button><button type="button" data-icao="UBBB">UBBB</button></div></div>
-          <div data-icerik="af" hidden><h3>Africa</h3><p>Supply across North, West, East and Central African gateways—from Mediterranean hubs in Libya, Egypt and Morocco to sub-Saharan capitals.</p><small><b>Operational focus:</b> advance fuel confirmation and, where available, alternative suppliers on long-range sectors.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="HLLM">HLLM</button><button type="button" data-icao="HECA">HECA</button><button type="button" data-icao="HEMM">HEMM</button><button type="button" data-icao="GMMN">GMMN</button><button type="button" data-icao="HKJK">HKJK</button><button type="button" data-icao="FCBB">FCBB</button></div></div>
+          <div data-icerik="af" hidden><h3>Africa</h3><p>Supply across North, West, East and Central African gateways, from Mediterranean hubs in Libya, Egypt and Morocco to sub-Saharan capitals.</p><small><b>Operational focus:</b> advance fuel confirmation and, where available, alternative suppliers on long-range sectors.</small><div class="icao-cipler" role="group" aria-label="Airports"><button type="button" data-icao="HLLM">HLLM</button><button type="button" data-icao="HECA">HECA</button><button type="button" data-icao="HEMM">HEMM</button><button type="button" data-icao="GMMN">GMMN</button><button type="button" data-icao="HKJK">HKJK</button><button type="button" data-icao="FCBB">FCBB</button></div></div>
         </div>
       </div>
       <div class="kure" id="kure"><div class="kure__govde"><div class="kure__ic">
